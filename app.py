@@ -18,6 +18,10 @@ CORS(app)
 def main():
     return 'Yo yo YO changing stuff in this fileeeeeeee'
 
+@app.route('kelly', methods=["GET"])
+def kelly():
+    0 / 1
+
 @app.route('/handled', methods=['GET'])
 def handled_exception():
     try:

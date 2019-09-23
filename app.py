@@ -6,13 +6,17 @@ import sentry_sdk
 from sentry_sdk.integrations.flask import FlaskIntegration
 
 sentry_sdk.init(
-    dsn="https://2ba68720d38e42079b243c9c5774e05c@sentry.io/1316515",
+    dsn="https://d164df7b815c4601b8c5ff3c10571ecf@sentry.io/1369903",
     integrations=[FlaskIntegration()],
     release=os.environ.get("VERSION")
 )
 
 app = Flask(__name__)
 CORS(app)
+
+@app.route('/', methods=["GET"])
+def main():
+    return 'Yo yo'
 
 @app.route('/handled', methods=['GET'])
 def handled_exception():
